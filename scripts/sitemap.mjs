@@ -1,6 +1,6 @@
 import * as fs from 'fs'
 import * as globby from 'globby'
-import * as prettier from 'prettier'
+import prettier from 'prettier'
 
 const getDate = new Date().toISOString()
 const DOMAIN = 'https://bukgeuk.dev'
@@ -43,7 +43,7 @@ const generatedSitemap = `
             ${pagesSitemap}
         </urlset>`
 
-    const formattedSitemap = [formatted(generatedSitemap)]
+    const formattedSitemap = formatted(generatedSitemap)
 
     fs.writeFileSync('../public/sitemap/sitemap.xml', formattedSitemap, 'utf8')
 })()
