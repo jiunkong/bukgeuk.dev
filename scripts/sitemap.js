@@ -1,6 +1,6 @@
-const fs = require('fs')
-const globby = require('globby')
-const prettier = require('prettier')
+import * as fs from 'fs'
+import * as globby from 'globby'
+import * as prettier from 'prettier'
 
 const getDate = new Date().toISOString()
 const DOMAIN = 'https://bukgeuk.dev'
@@ -9,7 +9,7 @@ const DOMAIN = 'https://bukgeuk.dev'
 const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
 
 (async () => {
-  const pages = await globby([
+  const pages = await globby.globby([
     // include
     '../pages/**/*.tsx',
     '../pages/*.tsx',

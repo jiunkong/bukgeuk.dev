@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "deploy": "next build && next export",
-    "prebuild": "sh scripts/generate-sitemap.sh",
-    "postbuild": "next-sitemap"
+    "prebuild": "sh scripts/generate-sitemap.sh"
   },
   "dependencies": {
     "next": "12.1.0",
