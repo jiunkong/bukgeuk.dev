@@ -6,5 +6,5 @@ mkdir sitemap
 cd ..
 cd scripts
 
-node ./robots.js
-node ./sitemap.js
+node ./robots.mjs
+node ./sitemap.mjs
