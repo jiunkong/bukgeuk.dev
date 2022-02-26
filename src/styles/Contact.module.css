@@ -1,0 +1,196 @@
+#contact {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+}
+
+#contact > :first-child {
+    height: 100vh;
+    background-color: #040307;
+    z-index: 10;
+    width: calc((100vw - var(--container-width)) / 2);
+}
+
+#container {
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    width: var(--container-width);
+}
+
+.element {
+    border-radius: 5px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+
+    position: relative;
+    opacity: 0;
+}
+
+.email {
+    background-color: #DB4437;
+    font-weight: 500;
+}
+
+.discord {
+    background-color: #5865F2;
+    font-weight: 500;
+}
+
+.kakaotalk {
+    background-color: rgb(247, 230, 0);
+    color: #3A1D1D;
+    font-weight: 600;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+#title {
+    background: linear-gradient(to left, #2319B6, #1D7AF8);
+    background-size: 200%;
+    color: transparent;
+    background-clip: text;
+    animation: gradient 15s ease infinite;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.subtitle {
+    color: #808080;
+    letter-spacing: 3px;
+    display: none;
+}
+
+@media (width <= 300px) {
+    #contact {
+        --container-width: 80vw;
+    }
+
+    #title {
+        font-size: 2.1rem;  
+    }
+
+    .subtitle {
+        margin-bottom: 30px;
+        font-size: 0.9rem;
+    }
+
+    #container {
+        font-size: 0.9rem;
+    }
+
+    .element {
+        height: 40px;
+        padding: 0 15px;
+    }
+}
+
+@media (width > 300px) and (width < 1600px) {
+    #contact {
+        --container-width: 80vw;
+    }
+
+    #title {
+        font-size: 2.2rem;     
+    }
+
+    .subtitle {
+        margin-bottom: 30px;
+        font-size: 1rem;
+    }
+
+    #container {
+        font-size: 1rem;
+    }
+
+    .element {
+        height: 42.5px;
+        padding: 0 20px;
+    }
+}
+
+@media (width >= 1600px) {
+    #contact {
+        --container-width: 1400px;
+    }
+
+    #title {
+        font-size: 4.2rem;   
+    }
+
+    .subtitle {
+        margin-bottom: 35px;
+        font-size: 1.2rem;
+    }
+
+    #container {
+        font-size: 1.2rem;
+    }
+
+    .element {
+        height: 50px;
+        padding: 0 20px;
+    }
+}
+
+@media (width <= 300px) {
+    .element {
+        width: 70vw;
+    }
+
+    #subtitle2 {
+        display: block;
+    }
+}
+
+@media (width > 300px) and (width <= 550px) {
+    .element {
+        width: 65vw;
+    }
+
+    #subtitle2 {
+        display: block;
+    }
+}
+
+@media (width > 550px) {
+    .element {
+        width: 350px;
+    }
+
+    #subtitle1 {
+        display: block;
+    }
+}
+
+@keyframes slide {
+    0% {
+        left: calc(-1 * var(--container-width));
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.animation {
+    animation: slide 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) 1;
+    opacity: 1;
+}

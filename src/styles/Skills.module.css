@@ -1,0 +1,145 @@
+@media (width < 1600px) {
+    #skills {
+        --list-width: 80vw;    
+    }
+
+    #title {
+        font-size: 2.2rem;     
+    }
+
+    #subtitle {
+        margin-bottom: 25px;
+        font-size: 1rem;
+    }
+
+    #list > span {
+        font-size: 1rem;
+    }
+
+    #list > div {
+        height: 45px;
+        width: 45px;
+    }
+
+    #list > span > span {
+        padding-bottom: 30px;
+    }
+}
+
+@media (width >= 1600px) {
+    #skills {
+        --list-width: 1400px;
+    }
+
+    #title {
+        font-size: 4.2rem;   
+    }
+
+    #subtitle {
+        margin-bottom: 35px;
+        font-size: 1.2rem;
+    }
+
+    #list > span {
+        font-size: 1.2rem;
+    }
+
+    #list > div {
+        height: 75px;
+        width: 75px;
+    }
+
+    #list > span > span {
+        padding-bottom: 8px;
+    }
+}
+
+#skills {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#skills > :not(#container) {
+    height: 100vh;
+    background-color: #040307;
+    z-index: 10;
+    width: calc((100vw - var(--list-width)) / 2);
+}
+
+#container {
+    color: #ffffff;
+}
+
+@keyframes gradient {
+    0% {
+        background-position: 0% 0%;
+    }
+    50% {
+        background-position: 100% 0%;
+    }
+    100% {
+        background-position: 0% 0%;
+    }
+}
+
+@keyframes slide {
+    0% {
+        left: calc(-1 * var(--list-width));
+        opacity: 0;
+    }
+    1% {
+        opacity: 1;
+    }
+    100% {
+        left: 0;
+    }
+}
+
+.animation {
+    animation: slide 1.5s cubic-bezier(0.22, 0.61, 0.36, 1) 1;
+}
+
+#title {
+    background: linear-gradient(to left, #2319B6, #1D7AF8);
+    background-size: 200%;
+    color: transparent;
+    background-clip: text;
+    animation: gradient 15s ease infinite;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+#subtitle {
+    color: #808080;
+    letter-spacing: 3px;
+}
+
+#list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 25px;
+
+    width: var(--list-width);
+
+    position: relative;
+}
+
+#list:hover {
+    left: 0;
+}
+
+#list > div {
+    background: transparent;
+    border-radius: 15px;
+}
+
+#list > span {
+    height: 75px;
+    display: flex;
+    flex-direction: column-reverse;
+    color: #808080;
+    font-weight: 500;
+}

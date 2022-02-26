@@ -1,9 +1,9 @@
 import Image from 'next/image'
-import styles from '../styles/Projects.module.css'
+import styles from '/src/styles/Projects.module.css'
 
-import project1 from '../public/image/project1.png'
-import project2 from '../public/image/project2.png'
-import project3 from '../public/image/project3.png'
+import project1 from '/public/image/project1.png'
+import project2 from '/public/image/project2.png'
+import project3 from '/public/image/project3.png'
 
 const Projects = () => {
     return (

@@ -1,20 +1,27 @@
+import { useRef } from 'react'
+import { useIntersectionObserver } from '../hooks/userIntersectionObserver'
 import Image from 'next/image'
-import styles from '../styles/Skills.module.css'
+import styles from '/src/styles/Skills.module.css'
 
-import c from '../public/image/c.png'
-import cpp from '../public/image/cpp.png'
-import js from '../public/image/js.png'
-import ts from '../public/image/ts.png'
-import nodejs from '../public/image/nodejs.png'
-import java from '../public/image/java.png'
-import kotlin from '../public/image/kotlin.png'
-import python from '../public/image/python.png'
-import reactImg from '../public/image/react.png'
-import nextjs from '../public/image/nextjs.png'
+import c from '/public/image/c.png'
+import cpp from '/public/image/cpp.png'
+import js from '/public/image/js.png'
+import ts from '/public/image/ts.png'
+import nodejs from '/public/image/nodejs.png'
+import java from '/public/image/java.png'
+import kotlin from '/public/image/kotlin.png'
+import python from '/public/image/python.png'
+import reactImg from '/public/image/react.png'
+import nextjs from '/public/image/nextjs.png'
 
 const Skills = () => {
+    const target = useRef(null)
+
+    useIntersectionObserver(target, styles.animation, false)
+
     return (
         <div id={styles.skills}>
+            <div/>
             <div id={styles.container}>
                 <div id={styles.title}>
                     Skills
@@ -22,7 +29,7 @@ const Skills = () => {
                 <div id={styles.subtitle}>
                     What I&apos;ve ever studied
                 </div>
-                <div id={styles.list}>
+                <div id={styles.list} ref={target}>
                     <div>
                         <Image src={c} alt="c"/>
                     </div>
@@ -58,6 +65,7 @@ const Skills = () => {
                     </span>
                 </div>
             </div>
+            <div/>
         </div>
     )
 }

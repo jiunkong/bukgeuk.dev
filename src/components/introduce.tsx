@@ -1,4 +1,4 @@
-import styles from '../styles/Introduce.module.css'
+import styles from '/src/styles/Introduce.module.css'
 
 const Introduce = () => {
     return (
