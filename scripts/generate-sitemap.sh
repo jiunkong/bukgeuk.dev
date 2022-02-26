@@ -4,7 +4,7 @@ rm -rf sitemap
 mkdir sitemap
 
 cd ..
-cd script
+cd scripts
 
 node ./robots.js
 node ./sitemap.js
