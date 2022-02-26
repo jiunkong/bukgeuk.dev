@@ -1,5 +1,5 @@
 import * as fs from 'fs'
-import * as globby from 'globby'
+import { globby } from 'globby'
 import prettier from 'prettier'
 
 const getDate = new Date().toISOString()
@@ -9,20 +9,20 @@ const DOMAIN = 'https://bukgeuk.dev'
 const formatted = sitemap => prettier.format(sitemap, { parser: 'html' });
 
 (async () => {
-  const pages = await globby.globby([
+  const pages = await globby([
     // include
-    '../pages/**/*.tsx',
-    '../pages/*.tsx',
+    '../src/pages/**/*.tsx',
+    '../src/pages/*.tsx',
     // exclude
-    '!../pages/_app.tsx',
-    '!../pages/_document.tsx',
+    '!../src/pages/_app.tsx',
+    '!../src/pages/_document.tsx',
   ])
 
 const pagesSitemap = `
     ${pages
     .map(page => {
       const path = page
-        .replace('../pages/', '')
+        .replace('../src/pages/', '')
         .replace('.tsx', '')
         .replace(/\/index/g, '')
       const routePath = path === 'index' ? '' : path
