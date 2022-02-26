@@ -5,6 +5,7 @@ export default class document extends Document {
         return (
             <Html>
                 <Head>
+                    <link rel="shortcut icon" href="/image/icon.ico"/>
                     <meta charSet="utf-8"></meta>
                     <body>
                         <Main/>

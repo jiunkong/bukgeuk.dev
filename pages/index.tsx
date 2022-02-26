@@ -11,7 +11,7 @@ import Contact from '../components/contact'
 
 const Home: NextPage = () => {
     return (
-        <React.Fragment>
+        <>
             <Head>
                 <title>Jiun Kong</title>
             </Head>
@@ -22,7 +22,7 @@ const Home: NextPage = () => {
                 <Projects/>
                 <Contact/>
             </div>
-        </React.Fragment>
+        </>
     )
 }
 
