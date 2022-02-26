@@ -10,9 +10,12 @@
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+
+    overflow-x: scroll;
 }
 
 #container > div {
+    height: var(--element-height);
     border-radius: 10px;
     overflow: hidden;
 }
@@ -46,8 +49,8 @@
 
 .description {
     position: relative;
-    top: -230px;
-    height: 230px;
+    top: calc((var(--element-height) + 5px) * -1);
+    height: calc(var(--element-height) + 5px);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -79,6 +82,10 @@
 }
 
 @media (width < 1600px) {
+    #projects {
+        --element-height: 135px;
+    }
+
     #title {
         font-size: 2.2rem;
     }
@@ -97,12 +104,15 @@
     }
 
     #container > div {
-        height: 135px;
         width: 240px;
     }
 }
 
 @media (width >= 1600px) {
+    #projects {
+        --element-height: 225px;
+    }
+
     #title {
         font-size: 4.2rem;
     }
@@ -118,7 +128,6 @@
     }
 
     #container > div {
-        height: 225px;
         width: 400px;
     }
 }
