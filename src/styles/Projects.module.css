@@ -11,7 +11,7 @@
     flex-wrap: wrap;
     gap: 25px;
 
-    overflow-x: scroll;
+    overflow-x: auto;
 }
 
 #container::-webkit-scrollbar {
@@ -94,6 +94,21 @@
     font-weight: 500;
 }
 
+@media (width < 1000px) {
+    #container {
+        height: fit-content;
+        max-height: 60vh;
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
+@media (width >= 1000px) and (width < 1600px) {
+    #container {
+        flex-direction: row;
+    }
+}
+
 @media (width < 1600px) {
     #projects {
         --element-height: 135px;
@@ -110,10 +125,6 @@
 
     #container {
         width: 80vw;
-        height: fit-content;
-        max-height: 60vh;
-        flex-direction: column;
-        align-items: center;
     }
 
     #container > div {
