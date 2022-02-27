@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 import github from '/public/image/github.png'
-import blog from '/public/image/tistory.png'
+import blog from '/public/image/blog.png'
 import styles from '/src/styles/Header.module.css'
 
 const Header = () => {
