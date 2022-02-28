@@ -4,6 +4,7 @@ import styles from '/src/styles/Projects.module.css'
 import project1 from '/public/image/project1.png'
 import project2 from '/public/image/project2.png'
 import project3 from '/public/image/project3.png'
+import project4 from '/public/image/project4.png'
 
 const Projects = () => {
     return (
@@ -40,6 +41,15 @@ const Projects = () => {
                             <div className={styles.description}>
                                 <div>Hanglish Decorder</div>
                                 <div>Translate English written by hangul typing layout into Korean</div>
+                            </div>
+                        </a>
+                    </div>
+                    <div>
+                        <a target="_blank" href="https://github.com/Bukgeuk/bukgeuk.dev" rel="noopener noreferrer">
+                            <Image src={project4} alt="bukgeuk.dev"/>
+                            <div className={styles.description}>
+                                <div>bukgeuk.dev</div>
+                                <div>My Personal Website</div>
                             </div>
                         </a>
                     </div>
